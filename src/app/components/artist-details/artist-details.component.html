@@ -1,0 +1,30 @@
+
+
+
+<div class="main-container">
+  <app-sidebar></app-sidebar>
+  
+  <div class="main">
+    <app-topbar (toggleMenu)="toggleNavigation()"></app-topbar>
+  
+    <div class="artist-hero-container">
+      <img class="artist-cover" src="assets/imgs/artist/arjit-singh.jpg" alt="">
+      <div class="artist-details">
+          <p>Arjit Singh</p>
+      </div>
+    </div>
+    
+    <div class="details">
+      <div class="song-Container">
+          <div class="cardHeader">
+              <h2>Songs by Arjit Singh</h2>
+          </div>
+    
+          <div class="card-container">
+              <app-song-card-item></app-song-card-item>
+          </div>
+      </div>
+    </div>
+  
+  </div>
+</div>

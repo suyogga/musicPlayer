@@ -1,0 +1,22 @@
+<div class="song-Container">
+    <div class="cardHeader">
+        <h2>Top Rated Songs</h2>
+        <a href="#" class="btn">View All</a>
+    </div>
+    
+
+    <div class="card-container">
+        <div class="music-card" *ngFor="let song of topRatedSongs">
+            <img src="{{song.imageUrl}}" alt="">
+            <div class="song-details">
+                <h3 class="song-title">{{song.title}}</h3>
+                <p>{{song.artist}}</p>
+                <div class="play">
+                    <a routerLink="/home/play-music/{{song.id}}">
+                        <span class="fa fa-play"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

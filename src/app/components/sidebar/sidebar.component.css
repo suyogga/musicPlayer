@@ -1,0 +1,36 @@
+.sidebar-container{
+    height: 90vh;
+    position: absolute;
+    background: #121212;
+    width: 230px;
+    top: 86px;
+}
+
+.nav-items ul {
+    list-style: none;
+    padding: 25px;
+}
+
+.nav-items li {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: 200;
+    transition: all 0.2s ease-in-out;
+}
+.nav-items li:hover{
+    background: gray;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-weight: 400;
+}
+.nav-items  a {
+    color: white;
+    text-decoration: none;
+    
+}
+.nav-items  a i{
+    margin-right: 10px;
+}

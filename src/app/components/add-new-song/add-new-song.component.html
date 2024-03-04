@@ -1,0 +1,69 @@
+
+
+
+
+<div class="main-container">
+    <app-sidebar></app-sidebar>
+    <div class="main">
+      <app-topbar (toggleMenu)="toggleNavigation()"></app-topbar>
+    
+      <div class="details">
+        <div class="song-Container">
+            <div class="cardHeader">
+                <h2>Add New Song</h2>
+                <!-- <a href="#" class="btn">View All</a> -->
+            </div>
+            
+      
+            <div class="form-container">
+                
+                <form action="">
+                    <div class="form-item">
+                        <label for="">Song Title: </label>
+                        <input type="text" name="" id="" placeholder="Enter song title">
+                    </div>
+                    <div class="form-item">
+                        <label for="">Song Category: </label>
+                        <select name="" id="">
+                            <option value="">Select Category</option>
+                            <option value="">Romantic</option>
+                            <option value="">Classic</option>
+                            <option value="">Pop</option>
+                            <option value="">Love</option>
+                            <option value="">Party</option>
+                            <option value="">Other</option>
+                        </select>
+                    </div>
+      
+                    <div class="form-item">
+                        <label for="">Song Language: </label>
+                        <select name="" id="">
+                            <option value="">Select Language</option>
+                            <option value="">Hindi</option>
+                            <option value="">English</option>
+                            <option value="">Tamil</option>
+                            <option value="">Telgu</option>
+                            <option value="">Gujrathi</option>
+                            <option value="">Punjabi</option>
+                            <option value="">Bhojpuri</option>
+                            <option value="">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-item">
+                        <label for="">Select Song Cover: </label>
+                        <input type="file" name="" id="">
+                    </div>
+                    <div class="form-item">
+                        <label for="">Select Song file: </label>
+                        <input type="file" name="" id="">
+                    </div>
+                    <button class="btn" type="submit">Add Song</button>
+                </form>
+            </div>
+      
+            <app-artist-songs></app-artist-songs>
+        </div>
+      </div>
+    
+    </div>
+  </div>

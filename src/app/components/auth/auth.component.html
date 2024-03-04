@@ -1,0 +1,121 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<div class="login-wrapper my-4" style="display: flex; align-items: center; justify-content: center; min-height: 100vh;">
+    <div class="login-container">
+        <input type="checkbox" id="flip">
+        <div class="cover">
+          <div class="front">
+            <img src="assets/imgs/backImg.jpg" alt="">
+          </div>
+          <div class="back">
+            <img class="backImg" src="assets/imgs/frontImg.jpg" alt="">
+            <div class="text">
+              <!-- <span class="text-1">Complete miles of journey <br> with one step</span> -->
+              <span class="text-1">Connecting you to what matters most.</span>
+              <span class="text-2">Let's get started</span>
+            </div>
+          </div>
+        </div>
+        <div class="forms">
+          <div class="form-content">
+            <div class="login-form">
+              <div class="title">Login</div>
+              <form>
+                <div class="input-boxes">
+                  <div class="input-box">
+                    <i class="fas fa-envelope"></i>
+                    <input id="emailId" type="text" placeholder="Enter your username" name="username">
+                  </div>
+                  
+                  <div class="input-box">
+                    <i class="fas fa-lock"></i>
+                    <input id="passwordId" type="password" placeholder="Enter your password" name="password">
+                  </div>
+                  
+                  <div class="text"><a routerLink="forgot-password">Forgot password?</a></div>
+                  <p *ngIf="errorMessage" class="showErrorCreateUserMsg">{{errorMessage}}</p>
+                  <div class="button input-box">
+                    <input id="loginSubmitId" type="submit" value="Login" [disabled]="!loginUserForm.valid">
+                  </div>
+                  <div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div>
+                </div>
+              </form>
+            </div>  
+            <div class="signup-form">
+              <div class="title">Signup</div>
+              <form >
+
+                <div class="row" id="img-preview">
+                  <img src="assets/imgs/default-user.png" alt="temp">
+                </div> 
+                <div class="input-boxes">
+                  
+                  <div class="input-box">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Enter First Name" name="fname">
+                  </div>
+                  
+
+
+                  <div class="input-box">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Enter Last Name" required name="lname">
+                  </div>
+                  
+                  <div class="input-box">
+                    <i class="fas fa-envelope"></i>
+                    <input type="text" placeholder="Enter your email" required name="email">
+                  </div>
+                  
+
+                  <div class="input-box">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Enter your password" required name="password" >
+                  </div>
+                  
+                  
+                  <div class="input-box">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Confirm password" required name="cpassword">
+                  </div>
+                  <!-- <small *ngIf="creatUserForm.get('cpassword').errors?.['required'] && creatUserForm.get('cpassword').touched">
+                    *Confirm password is required
+                  </small> -->
+                  
+
+
+                  <div class="input-box">
+                    <i class="fas fa-calendar"></i>
+                    <input type="date" required name="dob">
+                  </div>
+                  
+                  <!-- <div class="input-box">
+                    <i class="fas fa-mars"></i>
+                    <select name="gender" id="" required >
+                      <option value="M" selected>Male</option>
+                      <option value="F">Female</option>
+                      <option value="O">Other</option>
+                    </select>
+                  </div> -->
+
+                  <!-- <div class="row">
+                    <label for="userImg">Selecte image</label>
+                    <input type="file" (change)="onFileSelected($event)" id="userImg" name="userImg">
+                  </div> -->
+
+                  <div class="row text-center">
+                    <div id="img-preview"></div>
+                    <input type="file" id="userImg" name="userImg" accept="image/*"/>
+                    <label for="userImg">Choose Profile Picture</label>
+                  </div>
+                  <div class="button input-box">
+                    <input type="submit" value="Register">
+                  </div>
+                  <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

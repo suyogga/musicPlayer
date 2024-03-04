@@ -1,0 +1,70 @@
+<!-- Load the custom CSS style file -->
+
+
+
+<div class="main-container">
+  <app-sidebar></app-sidebar>
+  <div class="main">
+    <app-topbar (toggleMenu)="toggleNavigation()"></app-topbar>
+  
+    <div class="details">
+      <div class="player">
+        <!-- Define the section for displaying details -->
+        <div class="music-details">
+            <div class="now-playing">PLAYING {{currentIndex + 1}} OF {{songs.length}}</div>
+            <div class="track-art-carousel">
+                <div class="track-art-container">
+                    <div class="track-art" [style.background-image]="'url(' + songs[currentIndex]?.imageUrl + ')'"></div>
+                </div>
+            </div>
+            
+            <div class="track-name">{{ songs[currentIndex]?.title }}</div>
+            <div class="track-artist">{{ songs[currentIndex]?.artist }}</div>
+        </div>
+      
+        <!-- Define the section for displaying track buttons -->
+        <div class="buttons">
+            <!-- <div class="like-track" (click)="toggleLike(currentIndex)">
+                <i *ngIf="isLiked[currentIndex]" class="fas fa-heart fa-2x"></i>
+                <i *ngIf="!isLiked[currentIndex]" class="far fa-heart fa-2x"></i>
+            </div> -->
+            
+            <div class="prev-track" (click)="playPrevious()">
+                <i class="fa fa-step-backward fa-2x"></i>
+            </div>
+            
+            <div class="playpause-track" (click)="playAudio()">
+                <i *ngIf="currentlyPlaying && currentlyPlaying.playing()" class="fa fa-pause-circle fa-5x"></i>
+                <i *ngIf="!(currentlyPlaying && currentlyPlaying.playing())" class="fa fa-play-circle fa-5x"></i>
+            </div>
+            
+            <div class="next-track" (click)="playNext()">
+                <i class="fa fa-step-forward fa-2x"></i>
+            </div>
+            
+            <!-- <div class="add-to-playlist" (click)="addToPlaylist()">
+                <img src="assets/imgs/3318536.png" alt="Add to Playlist" width="50" height="50">
+            </div> -->
+        </div>
+      
+        <!-- Define the section for displaying the seek slider-->
+        <div class="slider_container">
+            <div class="current-time">{{ formatTime(currentTime) }}</div>
+            <input type="range" min="0" max="100" [value]="progress || 0" class="seek_slider" (input)="seekTo($event)">
+            <div class="total-duration">{{ formatTime(duration) }}</div>
+        </div>
+      
+        <!-- Define the section for displaying the volume slider-->
+        <div class="slider_container">
+            <i class="fa fa-volume-down"></i>
+            <input type="range" min="0" max="100" [value]="volume * 100" class="volume_slider" (input)="setVolume($event)">
+            <i class="fa fa-volume-up"></i>
+        </div>
+      </div>
+
+
+      <app-more-like-this></app-more-like-this>
+  </div>
+  
+  </div>
+</div>
